@@ -47,3 +47,6 @@ animation = &"fly"
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(424, -7)
 zoom = Vector2(1.035, 1.035)
+
+[node name="Shooter" type="Marker2D" parent="."]
+position = Vector2(89, 13)
