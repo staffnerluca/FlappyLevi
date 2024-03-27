@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://bw2nug0jowfja"]
+
+[ext_resource type="Texture2D" uid="uid://dok0m0ub26m70" path="res://img/pxLeviAfterHit.png" id="1_1mhr7"]
+[ext_resource type="Script" path="res://player.gd" id="1_24ohn"]
+[ext_resource type="Texture2D" uid="uid://51uc7h4ni8yh" path="res://img/pxFightingLevi.png" id="2_gmlsm"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v4nlb"]
+radius = 94.0
+height = 240.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6pj2n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1mhr7")
+}],
+"loop": true,
+"name": &"afterHit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gmlsm")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"hit",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_24ohn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_v4nlb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-11, 16)
+scale = Vector2(0.537982, 0.498956)
+sprite_frames = SubResource("SpriteFrames_6pj2n")
+animation = &"fly"

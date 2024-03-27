@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dscqif8i8v8cp"]
+
+[ext_resource type="Texture2D" uid="uid://c7e5ivju8lu04" path="res://img/pxCleanLevi.png" id="1_6nsg7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0agrt"]
+font_size = 50
+
+[node name="NewRecordScreen" type="Node2D"]
+
+[node name="PxCleanLevi" type="Sprite2D" parent="."]
+position = Vector2(230, 323)
+texture = ExtResource("1_6nsg7")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 534.0
+offset_top = 149.0
+offset_right = 826.0
+offset_bottom = 218.0
+text = "New Record!"
+label_settings = SubResource("LabelSettings_0agrt")
