@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwn6f11645sr4"]
+
+[ext_resource type="Texture2D" uid="uid://b86i8kt7fs037" path="res://img/pxDisappointedLevi.png" id="1_a2hhx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6sp0i"]
+font_size = 44
+
+[node name="YouDiedScreen" type="Node2D"]
+
+[node name="PxDisappointedLevi" type="Sprite2D" parent="."]
+position = Vector2(380, 228)
+scale = Vector2(0.517627, 0.49125)
+texture = ExtResource("1_a2hhx")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 584.0
+offset_top = 162.0
+offset_right = 1003.0
+offset_bottom = 405.0
+text = "I hate 
+meaningless 
+deaths"
+label_settings = SubResource("LabelSettings_6sp0i")

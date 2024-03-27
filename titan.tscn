@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://bndcnuycdnktl"]
+
+[ext_resource type="Script" path="res://Titan.gd" id="1_mr78o"]
+[ext_resource type="Texture2D" uid="uid://do7ppnsrldd36" path="res://img/dummyForTitan.png" id="2_hwy5s"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0p7gn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hwy5s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ahlk"]
+size = Vector2(208, 86)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ou0eu"]
+size = Vector2(228, 316)
+
+[node name="Titan" type="CharacterBody2D"]
+script = ExtResource("1_mr78o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(33, 17)
+scale = Vector2(0.686667, 0.526667)
+sprite_frames = SubResource("SpriteFrames_0p7gn")
+
+[node name="WeakSpot" type="CollisionShape2D" parent="."]
+position = Vector2(31, -111)
+shape = SubResource("RectangleShape2D_4ahlk")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(34, 83)
+shape = SubResource("RectangleShape2D_ou0eu")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

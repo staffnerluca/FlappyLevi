@@ -1,7 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://d02dslu1cha8q"]
+[gd_scene load_steps=5 format=3 uid="uid://d02dslu1cha8q"]
 
 [ext_resource type="PackedScene" uid="uid://b4m1tw8am52dc" path="res://parallax_background.tscn" id="1_2kp7u"]
+[ext_resource type="PackedScene" uid="uid://bw2nug0jowfja" path="res://player.tscn" id="2_bnlah"]
+[ext_resource type="PackedScene" uid="uid://bndcnuycdnktl" path="res://titan.tscn" id="3_shfjh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0vdrr"]
+size = Vector2(2731, 180)
 
 [node name="game" type="Node2D"]
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("1_2kp7u")]
+
+[node name="Player" parent="." instance=ExtResource("2_bnlah")]
+position = Vector2(180, 559)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1362, 897)
+shape = SubResource("RectangleShape2D_0vdrr")
+
+[node name="Titan" parent="." instance=ExtResource("3_shfjh")]
+position = Vector2(1013, 549)

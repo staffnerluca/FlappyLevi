@@ -43,3 +43,7 @@ position = Vector2(-11, 16)
 scale = Vector2(0.537982, 0.498956)
 sprite_frames = SubResource("SpriteFrames_6pj2n")
 animation = &"fly"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(424, -7)
+zoom = Vector2(1.035, 1.035)
